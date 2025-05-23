@@ -136,6 +136,12 @@
     transform: translateX(100%);
 }
 
+@media(max-width: 625px)
+{
+    .slogan-container span{
+        font-size: 10px;
+    }
+}
 /* Efecto de partículas (opcional) */
 .particles
 {

@@ -1,15 +1,15 @@
 <mat-toolbar class="creative-header">
-  <!-- Efecto de partículas (opcional) -->
-  <div class="particles">
-    <div
-      *ngFor="let particle of particles"
-      class="particle"
-      [style.left]="particle.x + '%'"
-      [style.top]="particle.y + '%'"
-      [style.width]="particle.size + 'px'"
-      [style.height]="particle.size + 'px'"
-      [style.animation-delay]="particle.delay + 's'"
-    ></div>
+<div class="particles">
+    @for (particle of particles; track particle) {
+      <div
+        class="particle"
+        [style.left]="particle.x + '%'"
+        [style.top]="particle.y + '%'"
+        [style.width]="particle.size + 'px'"
+        [style.height]="particle.size + 'px'"
+        [style.animation-delay]="particle.delay + 's'"
+      ></div>
+    }
   </div>
 
   <div class="header-container">

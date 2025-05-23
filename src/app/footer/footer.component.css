@@ -69,13 +69,6 @@
     border: 1px solid #444;
 }
 
-.team-member,
-.team-card,
-.mat-card-header
-{
-    min-width: 0;
-}
-
 .member-photo
 {
     width: 70px;
