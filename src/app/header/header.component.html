@@ -1,14 +1,9 @@
 <mat-toolbar class="creative-header">
-<div class="particles">
+  <div class="particles">
     @for (particle of particles; track particle) {
-      <div
-        class="particle"
-        [style.left]="particle.x + '%'"
-        [style.top]="particle.y + '%'"
-        [style.width]="particle.size + 'px'"
-        [style.height]="particle.size + 'px'"
-        [style.animation-delay]="particle.delay + 's'"
-      ></div>
+    <div class="particle" [style.left]="particle.x + '%'" [style.top]="particle.y + '%'"
+      [style.width]="particle.size + 'px'" [style.height]="particle.size + 'px'"
+      [style.animation-delay]="particle.delay + 's'"></div>
     }
   </div>
 
@@ -20,6 +15,41 @@
     </div>
     <div class="slogan-container">
       <span class="slogan">Más que autos, experiencias al límite</span>
+    </div>
+  </div>
+
+  <div class="accessibility-menu">
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Menú de accesibilidad"
+      [attr.aria-expanded]="isMenuOpen">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+
+    <div class="main-options" *ngIf="isMenuOpen">
+      <button (click)="toggleScreenReader()" aria-label="Lector de pantalla">
+        <mat-icon>volume_up</mat-icon>
+      </button>
+      <button aria-label="Contraste de colores" (click)="toggleContrast()">
+        <mat-icon>contrast</mat-icon>
+      </button>
+      <button aria-label="Escalabilidad de texto">
+        <mat-icon>text_fields</mat-icon>
+      </button>
+      <button aria-label="Tipografía accesible">
+        <mat-icon>font_download</mat-icon>
+      </button>
+    </div>
+
+    <div class="reader-suboptions" *ngIf="isScreenReaderActive">
+      <button (click)="startReading()" aria-label="Comenzar lectura">
+        <mat-icon>play_arrow</mat-icon>
+      </button>
+      <button (click)="pauseReading()" aria-label="Pausar lectura">
+        <mat-icon>pause</mat-icon>
+      </button>
+      <button (click)="stopReading()" aria-label="Detener lectura">
+        <mat-icon>stop</mat-icon>
+      </button>
     </div>
   </div>
 </mat-toolbar>
