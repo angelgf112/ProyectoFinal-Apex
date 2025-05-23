@@ -12,12 +12,14 @@
     letter-spacing: 0.5px;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid var(--accent-color) !important; /* Subrayado completo */
+    text-align: center;
 }
 
 .featured-section {
-    position: relative;
-    margin: 4rem 0;
-    padding: 0 60px;
+  position: relative;
+  padding: 2rem 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 owl-carousel-o {

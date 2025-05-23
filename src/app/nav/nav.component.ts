@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { AuthService } from '../shared/auth.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenu, MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-nav',
@@ -28,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
     RouterModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule
   ],
 })
 export class NavComponent {
