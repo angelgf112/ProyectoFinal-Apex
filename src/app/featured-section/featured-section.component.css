@@ -64,7 +64,7 @@ owl-carousel-o {
     right: 10px;
 }
 
-/* Card styling */
+
 .featured-section .vehicle-card {
     height: 100%;
     display: flex;
@@ -76,6 +76,28 @@ owl-carousel-o {
     overflow: hidden;
     transition: all 0.3s ease;
 }
+
+.vehicle-card h3 {
+  color: white !important;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-card p {
+  color: var(--accent-color) !important; 
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+.vehicle-card .features span {
+  color: rgba(255, 255, 255, 0.9) !important; 
+}
+
+.vehicle-card .features mat-icon {
+  color: var(--accent-color) !important; 
+}
+
 
 .featured-section .vehicle-card:hover {
     transform: translateY(-5px);
@@ -98,5 +120,7 @@ owl-carousel-o {
 }
 
 .featured-section .features {
-    margin-top: auto;
+    display: flex;
+    align-items: center;
 }
+
