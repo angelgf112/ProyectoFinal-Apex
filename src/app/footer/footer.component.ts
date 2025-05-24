@@ -29,16 +29,34 @@ export class FooterComponent {
       photoUrl: 'img/angel.jpg',
     },
     {
-      name: 'Osbaldo Escalera Valenciano',
+      name: 'Abraham Barrientos Esquivel',
       role: 'Diseñador UI/UX',
       degree: 'Ing. en Sistemas Computacionales',
-      photoUrl: 'img/osbaldo.jpg',
+      photoUrl: 'img/borrarDespues.png',
     },
     {
       name: 'Diego Vazques Reyes',
       role: 'Diseñador UI/UX',
       degree: 'Ing. en Sistemas Computacionales',
       photoUrl: 'img/diego.jpg',
+    },
+    {
+      name: 'David Menchaca Lora',
+      role: 'Diseñador UI/UX',
+      degree: 'Ing. en Sistemas Computacionales',
+      photoUrl: 'img/borrarDespues.png',
+    },
+    {
+      name: 'Angel Ramses Martinez',
+      role: 'Diseñador UI/UX',
+      degree: 'Ing. en Sistemas Computacionales',
+      photoUrl: 'img/borrarDespues.png',
+    },
+    {
+      name: 'Luis Humberto Ramirez Gutierrez',
+      role: 'Diseñador UI/UX',
+      degree: 'Ing. en Sistemas Computacionales',
+      photoUrl: 'img/borrarDespues.png',
     },
   ];
 }
