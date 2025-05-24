@@ -246,7 +246,7 @@ p
 }
 
 /* Filtros para daltonismo */
-.main-content .daltonism-protanopia {
+.main-content.daltonism-protanopia {
   filter: url('#protanopia-filter');
 }
 
@@ -254,7 +254,7 @@ p
   filter: url('#deuteranopia-filter');
 }
 
-.main-content .daltonism-tritanopia {
+.main-content.daltonism-tritanopia {
   filter: url('#tritanopia-filter');
 }
 
@@ -265,11 +265,7 @@ svg.filters {
   height: 0;
 }
 
-app-header, 
-app-footer, 
-.accessibility-menu {
-  filter: none !important;
-}
+
 
 /* svg.filters filter {
   filterUnits="objectBoundingBox" x="0" y="0" width="1" height="1"
