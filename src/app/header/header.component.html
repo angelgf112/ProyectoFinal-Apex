@@ -29,8 +29,8 @@
       <button (click)="toggleScreenReader()" aria-label="Lector de pantalla">
         <mat-icon>volume_up</mat-icon>
       </button>
-      <button aria-label="Contraste de colores" (click)="toggleContrast()">
-        <mat-icon>contrast</mat-icon>
+      <button (click)="toggleDaltonismMenu($event)" aria-label="Modos de daltonismo">
+        <mat-icon>color_lens</mat-icon>
       </button>
       <button aria-label="Escalabilidad de texto">
         <mat-icon>text_fields</mat-icon>
@@ -49,6 +49,25 @@
       </button>
       <button (click)="stopReading()" aria-label="Detener lectura">
         <mat-icon>stop</mat-icon>
+      </button>
+    </div>
+
+    <div class="daltonism-suboptions" *ngIf="isDaltonismMenuOpen">
+      <button (click)="applyFilter('protanopia')" aria-label="Protanopia">
+        <mat-icon>visibility</mat-icon>
+        <span>Protanopia</span>
+      </button>
+      <button (click)="applyFilter('deuteranopia')" aria-label="Deuteranopia">
+        <mat-icon>visibility</mat-icon>
+        <span>Deuteranopia</span>
+      </button>
+      <button (click)="applyFilter('tritanopia')" aria-label="Tritanopia">
+        <mat-icon>visibility</mat-icon>
+        <span>Tritanopia</span>
+      </button>
+      <button (click)="resetFilter()" aria-label="Restablecer colores">
+        <mat-icon>refresh</mat-icon>
+        <span>Original</span>
       </button>
     </div>
   </div>
