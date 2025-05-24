@@ -21,6 +21,9 @@ export class HeaderComponent {
   private utterance = new SpeechSynthesisUtterance();
   private isPaused = false;
   isMenuOpen = false;
+  isDaltonismMenuOpen = false;
+  currentFilter = '';
+
 
   constructor(public themeService: ThemeService, private liveAnnouncer: LiveAnnouncer) { }
 
@@ -28,19 +31,38 @@ export class HeaderComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleContrast() {
-    // Implementación futura
-    console.log("Cambiar contraste de colores");
+  toggleDaltonismMenu(event: Event) {
+    event.stopPropagation();
+    this.isDaltonismMenuOpen = !this.isDaltonismMenuOpen;
   }
+
   toggleTheme() {
     this.themeService.toggleTheme();
   }
+
+  applyFilter(filterType: string) {
+  this.currentFilter = filterType;
+  const mainContent = document.querySelector('.main-content');
+  
+  // Remueve filtros previos
+  mainContent?.classList.remove('daltonism-protanopia', 'daltonism-deuteranopia', 'daltonism-tritanopia');
+  
+  // Aplica nuevo filtro solo al main-content
+  mainContent?.classList.add(`daltonism-${filterType}`);
+}
+
+
+  resetFilter() {
+  const mainContent = document.querySelector('.main-content');
+  mainContent?.classList.remove('daltonism-protanopia', 'daltonism-deuteranopia', 'daltonism-tritanopia');
+  this.currentFilter = '';
+}
 
   startReading() {
     if (this.speechSynth.paused) {
       this.speechSynth.resume();
     } else {
-      this.readContent(); // Reinicia la lectura
+      this.readContent(); 
     }
     this.isPaused = false;
   }
@@ -113,24 +135,15 @@ export class HeaderComponent {
     }
   }
 
-  // private readContent() {
-  //   this.speechSynth.cancel();
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const target = event.target as HTMLElement;
 
-  //   // Obtiene el texto de los elementos clave
-  //   const mainContent = document.querySelector('main')?.textContent || '';
-  //   const headers = Array.from(document.querySelectorAll('h1, h2, h3,h4,span,p'))
-  //     .map(el => el.textContent)
-  //     .join('. ');
-
-  //   this.utterance.text = `Contenido de la página: ${headers}. ${mainContent}`;
-  //   this.speechSynth.speak(this.utterance);
-  // }
-
-  // Opcional: Activar con teclado (Alt + S)
-  @HostListener('window:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.altKey && event.key === 's') {
-      this.toggleScreenReader();
+    // Si el clic NO fue en ningún elemento del menú de accesibilidad
+    if (!target.closest('.accessibility-menu')) {
+      this.isMenuOpen = false;
+      this.isDaltonismMenuOpen = false;
     }
   }
+
 }
