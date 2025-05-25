@@ -354,6 +354,57 @@
     border-left: 3px solid var(--accent-color);
 }
 
+
+.high-contrast {
+  filter: contrast(200%) !important; 
+  background-color: #000 !important;
+  color: #fff !important; 
+}
+
+
+
+.font-submenu {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 180px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.font-submenu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  color: white;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.font-submenu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.font-submenu button.active {
+  background: rgba(138, 180, 248, 0.2);
+  border-left: 3px solid var(--accent-color);
+}
+
+.font-submenu mat-icon {
+  font-family: 'Material Icons' !important;
+}
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
