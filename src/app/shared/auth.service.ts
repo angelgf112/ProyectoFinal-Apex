@@ -104,6 +104,6 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return this.loggedUserName !== null;
+    return this.loggedUserName !== null; // ksjks
   }
 }
