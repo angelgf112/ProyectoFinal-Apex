@@ -11,7 +11,7 @@ export class AuthService {
   }
 
   logout() {
-    this.loggedUser = null;
+    this.loggedUser = null; //ss
   }
 
   get user() {
